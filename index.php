@@ -35,12 +35,16 @@ function frontend_scripts()
         wp_enqueue_script(
             'wpp-lazy-iframe-blazy',
             plugins_url('assets/blazy.min.js', __FILE__),
-            filemtime(plugin_dir_path(__FILE__) . 'assets/blazy.min.js')
+            [],
+            filemtime(plugin_dir_path(__FILE__) . 'assets/blazy.min.js'),
+            true
         );
         wp_enqueue_script(
             'wpp-lazy-iframe-front',
             plugins_url('assets/script.js', __FILE__),
-            filemtime(plugin_dir_path(__FILE__) . 'assets/script.js')
+            ['wpp-lazy-iframe-blazy'],
+            filemtime(plugin_dir_path(__FILE__) . 'assets/script.js'),
+            true
         );
     }
 }
