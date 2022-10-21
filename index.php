@@ -43,7 +43,7 @@ function frontend_scripts()
             'wpp-lazy-iframe-front',
             plugins_url('assets/script.js', __FILE__),
             ['wpp-lazy-iframe-blazy'],
-            filemtime(plugin_dir_path(__FILE__) . 'assets/script.js'),
+            filemtime(plugin_dir_path(__FILE__) . 'assets/index.js'),
             true
         );
     }

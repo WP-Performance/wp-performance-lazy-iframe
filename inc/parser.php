@@ -5,6 +5,7 @@ namespace WPPerformance\LazyIframe\inc\parser;
 /** find image with classes nolazy for replace lazy to eager */
 function parse($string)
 {
+    if (!$string || $string === '') return $string;
     $document = new \DOMDocument();
     // hide error syntax warning
     libxml_use_internal_errors(true);
