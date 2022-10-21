@@ -34,16 +34,16 @@ function frontend_scripts()
     if (strpos($content,  'iframe') !== false || strpos($content,  'wp-block-embed__wrapper')) {
         wp_enqueue_script(
             'wpp-lazy-iframe-blazy',
-            plugins_url('assets/blazy.min.js', __FILE__),
+            plugins_url('public/blazy.min.js', __FILE__),
             [],
-            filemtime(plugin_dir_path(__FILE__) . 'assets/blazy.min.js'),
+            filemtime(plugin_dir_path(__FILE__) . 'public/blazy.min.js'),
             true
         );
         wp_enqueue_script(
             'wpp-lazy-iframe-front',
-            plugins_url('assets/script.js', __FILE__),
+            plugins_url('public/index.js', __FILE__),
             ['wpp-lazy-iframe-blazy'],
-            filemtime(plugin_dir_path(__FILE__) . 'assets/index.js'),
+            filemtime(plugin_dir_path(__FILE__) . 'public/index.js'),
             true
         );
     }
